@@ -250,6 +250,6 @@ Track:Play()
   	end    
 })
 
-Tab:AddParagraph("What's it?","хз, вроде как эта хуйня пиздит сервера")
+Tab:AddParagraph("What's it?","xz, vrode kak eta xyinya pizdit cervera")
 
 OrionLib:Init()
