@@ -250,6 +250,6 @@ Track:Play()
   	end    
 })
 
-Tab:AddParagraph("What's it?","The roblox client is just crashing. EVERYONE HAS.")
+Tab:AddParagraph("What's it?","хз, вроде как эта хуйня пиздит сервера")
 
 OrionLib:Init()
