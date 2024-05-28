@@ -268,7 +268,9 @@ end
 Tab:AddButton({
 	Name = "Hardcore Map",
 	Callback = function()
-      		local Character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+      		workspace.CityMap.Ceiling:Destroy()
+            
+            local Character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
 if Character then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-806.342224, 1717.00171, 101.30275, -0.88731271, 1.17393206e-07, 0.461168259, 6.50596803e-08, 1, -1.29377767e-07, -0.461168259, -8.47950758e-08, -0.88731271)
 end
