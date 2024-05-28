@@ -1,13 +1,15 @@
+local defaultpathHC = game:GetService("ReplicatedStorage"):WaitForChild("HardcoreStuff")
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 OrionLib:MakeNotification({
 	Name = "Loaded",
-	Content = "Ready, Hack Version 1.2",
+	Content = "Ready, Hack Version 1.2.5",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
 
-local Window = OrionLib:MakeWindow({Name = "Super Toilet Brawl [Infinity Hack Beta 1.2]", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Super Toilet Brawl [Infinity Hack Beta 1.2.5]", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
 	Name = "Rage Functions",
 	Icon = "rbxassetid://4483345998",
@@ -57,8 +59,8 @@ Tab:AddButton({
 local CoolSlider = Tab:AddSlider({
 	Name = "Speed",
 	Min = 5,
-	Max = 500,
-	Default = 5,
+	Max = 700,
+	Default = 30,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Speed",
@@ -70,8 +72,8 @@ local CoolSlider = Tab:AddSlider({
 local CoolSlider = Tab:AddSlider({
 	Name = "Jump",
 	Min = 50,
-	Max = 500,
-	Default = 50,
+	Max = 700,
+	Default = 80,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Speed",
@@ -225,7 +227,7 @@ Tab:AddParagraph("Warning","Don't include this with the noclip unless you want t
 Tab:AddParagraph("I clicked, but nothing happened..","Press [E]")
 
 local Tab = Window:MakeTab({
-	Name = "Client Functions",
+	Name = "TP Functions",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -234,22 +236,60 @@ local Section = Tab:AddSection({
 	Name = "Functions"
 })
 Tab:AddButton({
-	Name = "Crash Client",
+	Name = "Game",
 	Callback = function()
-      		local Players = game:GetService("Players")
-
-local LocalPlayer = Players.LocalPlayer
-local Character = LocalPlayer.Character
-local Humanoid = Character:WaitForChild("Humanoid")
-
-local Animation = Instance.new("Animation", Character)
-Animation.AnimationId = "rbxassetid://84315373"
-
-local Track = Humanoid:LoadAnimation(Animation)
-Track:Play()
+      		local Character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+if Character then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-782.114075, 1178.6521, 385.347778, 0.999987364, -4.97785077e-05, 0.0050211912, 8.46782644e-09, 0.999950886, 0.00991151109, -0.005021438, -0.0099113863, 0.99993825)
+end
   	end    
 })
 
-Tab:AddParagraph("What's it?","xz, vrode kak eta xyinya pizdit cervera")
+Tab:AddButton({
+	Name = "Lobby",
+	Callback = function()
+      		local Character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+if Character then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(143.332138, 59504.2344, -17.3853512, 0.999987364, -0.000141668424, 0.00501924427, 8.96057006e-09, 0.99960196, 0.0282120295, -0.00502124336, -0.0282116737, 0.999589384)
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "The Forge",
+	Callback = function()
+      		local Character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+if Character then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-477.170685, 49376.7695, -332.017609, 0.945478678, -0.0251040105, 0.324715078, -1.67280803e-08, 0.997024834, 0.0770809203, -0.325684041, -0.0728783682, 0.942665696)
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Hardcore Map",
+	Callback = function()
+      		local Character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+if Character then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-806.342224, 1717.00171, 101.30275, -0.88731271, 1.17393206e-07, 0.461168259, 6.50596803e-08, 1, -1.29377767e-07, -0.461168259, -8.47950758e-08, -0.88731271)
+end
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Map Functions",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Functions"
+})
+Tab:AddButton({
+	Name = "Show Hardcore Map",
+	Callback = function()
+      		game:GetService("ReplicatedStorage").HardcoreStuff.HardcoreMap:Clone()
+            game:GetService("ReplicatedStorage").HardcoreStuff.HardcoreMap.Parent = workspace
+  	end    
+})
 
 OrionLib:Init()
